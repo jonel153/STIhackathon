@@ -13,10 +13,24 @@
 
 	<style type="text/css">
 		#background_pic{
-		border: 1px solid black;
-		height: 250px;
-		background-image: url("<?php echo base_url();?>images/main.jpg");
-		background-size: cover;
+			border: 1px solid black;
+			height: 250px;
+			background-image: url("<?php echo base_url();?>images/main.jpg");
+			background-size: cover;
+		}
+
+		#admin_name{
+			list-style: none;
+			margin-top: -40px;
+		}
+		
+		#admin_name li {
+			display: inline;
+
+		}
+
+		#admin ul li a{
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -31,7 +45,16 @@
 
 	<div class="col-md-2">
 		<img src="<?php echo base_url();?>images/member.png"  width="30" height="30">
-		Jonel Belandres
+		<ul id="admin_name">
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<?php echo $name;?><span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="<?php echo base_url();?>admin/logout">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 	</div>
 

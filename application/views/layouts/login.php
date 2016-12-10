@@ -59,17 +59,15 @@
 <div id="admin" class="col-md-12">
 	<div id="login">
 		<div id="login_header">Login</div>
-		<div id="login_input">
-			<label>Username:</label><input type="text" name="username" class="form-control">
-			<label>Password:</label><input type="password" name="password" class="form-control">
 
-			<input id="submit_btn" type="submit" name="submit" value="Login" class="form-control">
+		<div id="login_input">
+			<form action="<?php echo base_url();?>admin/login_process" method="POST">
+				<label>Username:</label><input type="text" name="username" class="form-control">
+				<label>Password:</label><input type="password" name="password" class="form-control">
+				<input id="submit_btn" type="submit" name="submit" value="Login" class="form-control">
+			</form>
 		</div>
 	</div>
-
-
-
-
 </div>
 
 </body>
