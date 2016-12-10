@@ -26,7 +26,6 @@
 		
 		#admin_name li {
 			display: inline;
-
 		}
 
 		#admin ul li a{
