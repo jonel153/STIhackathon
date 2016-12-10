@@ -5,13 +5,13 @@
 	<title>Hackathon</title>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-	
+
 	<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrapValidator.min.js"></script>
-	
+
 	<script>
-		
+
 	</script>
 	<style type="text/css">
 		body{
@@ -38,7 +38,7 @@
 		#nav ul{
 			list-style: none;
 		}
-		
+
 		#nav li {
 			font-size: 20px;
 			display: inline;
@@ -57,7 +57,7 @@
 			padding-bottom: 15px;
 			padding-left: 2px;
 			padding-right: 2px;
-			background-color: white; 
+			background-color: white;
 			color: #2ecc71;
 			transition: all 0.2s ease-in-out 0.1s;
 			border-radius: 3px;
@@ -70,7 +70,7 @@
 		#middle_content #announcement{
 
 			height: 400px;
-			
+
 		 }
 
 		#middle_content #content1{
@@ -78,20 +78,21 @@
 			height: auto;
 			border: 1px solid #ffffff;
 			box-shadow: 5px 5px 2px grey;
-			
+
 		}
 		#middle_content #content2{
 			height: auto;
 			border: 1px solid #ffffff;
 			box-shadow: 5px 5px 3px grey;
-			
+
 		}
 		#middle_content #content3{
 			height: auto;
 			border: 1px solid #ffffff;
 			box-shadow: 5px 5px 3px grey;
-			
+
 		}
+
 
 		#middle_content #modal{
 			background-color: #2ecc71;
@@ -111,7 +112,7 @@
 		}
 
 		#middle_content #announcement-header{
-			font-family: Imprint MT Shadow; 
+			font-family: Imprint MT Shadow;
 		}
 
 		#middle_content #view-more{
@@ -127,17 +128,19 @@
 			-webkit-filter: alpha(opacity=20);
 			border-radius: 5px;
 		}
-		
+		#myModal1{
+			z-index: 5;
+		}
 	</style>
 </head>
 <body>
 
 <div id="main_container">
 	<div id="nav" class="col-md-12">
-		<div class="col-md-6"></div>
-		<div class="col-md-6">
+		<div class="col-md-5"></div>
+		<div class="col-md-7">
 			<ul>
-				<li><a href="">Home</a></li>
+				<li><a href="<?php echo site_url();?>">Home</a></li>
 				<li><a href="">About us</a></li>
 				<li><a href="">User Guide</a></li>
 				<li class="dropdown">
@@ -149,127 +152,65 @@
 						<li><a href="#Investors">Investors</a></li>
 					</ul>
 				</li>
+				<li><a href="#" data-toggle="modal" data-target="#myModal1">Sign in</a></li>
+
+				<!-- Modal for Sign In -->
+				<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								Sign In
+							</div>
+						</div>
+					</div>
+				</div>
 			</ul>
 		</div>
 	</div>
 
-	
+
 	<div id="slide" class="col-md-12">
 		<div id="sayings">"weaweaweaea"</div>
 
 	</div>
 
-	
+	<div class="col-md-3 col-md-offset-3">
+		<h2 align="center" class="text-uppercase" style="font-family: Imprint MT Shadow";>
+			<strong><u>List Of Goods</u></strong>
+		</h2>
+	</div>
 	<div id="middle_content" class ="col-md-12">
 		<div id="" class="col-md-9">
 		 	<div id="content1" class="col-md-4">
 		 		<div class="thumbnail">
 			 		<img src="images/img.jpg" alt="...">
 			 		<div class="caption">
-			 			<h3>Thumbnail label</h3>
-			 			<p>....</p>
-			 			<div id="view-more">
-			 				<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">
-			 				View More
-			 				</button>
-			 			</div>
-
-			 			<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-			 				<div class="modal-dialog modal-lg" role="document">
-			 					<div class="modal-content">
-			 						<div id="modal">
-			 							<div class="modal-header">
-				 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				 								<span aria-hidden="true">&times;</span>
-				 							</button>
-				 							<h3 class="modal-tittle" id="myModalLabel" align="center" style="font-family:Bodoni MT Black">
-				 								<p style="font-size:200%;">Farm Type</p>
-				 							</h3>
-				 						</div>
-			 						</div>
-			 						<div class="modal-body">
-			 							<img src="images/img.jpg" alt="...." style="width:100%; height:150px;">
-			 						</div>
-			 						<div class="modal-footer">
-			 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			 						</div>
-			 					</div>
-			 				</div>
-			 			</div>
+			 			<h3><strong>Name of Product</strong></h3>
+			 			<p class="text-uppercase">Location:</p>
+						<p class="text-uppercase">Price: </p>
+			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
 			 		</div>
 			 	</div>
 		 	</div>
 		 	<div id="content2" class="col-md-4">
-		 		<div class="thumbnail">
+				<div class="thumbnail">
 			 		<img src="images/img.jpg" alt="...">
 			 		<div class="caption">
-			 			<h3>Thumbnail label</h3>
-			 			<p>....</p>
-			 			<div id="view-more">
-			 				<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">
-			 				View More
-			 				</button>
-			 			</div>
-
-			 			<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-			 				<div class="modal-dialog modal-lg" role="document">
-			 					<div class="modal-content">
-			 						<div id="modal">
-			 							<div class="modal-header">
-				 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				 								<span aria-hidden="true">&times;</span>
-				 							</button>
-				 							<h3 class="modal-tittle" id="myModalLabel" align="center" style="font-family:Imprint MT Black">
-				 								<p style="font-size:200%;">Farm Type</p>
-				 							</h3>
-				 						</div>
-			 						</div>
-			 						<div class="modal-body">
-			 							<img src="images/img.jpg" alt="...." style="width:100%; height:150px;">
-			 						</div>
-			 						<div class="modal-footer">
-			 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			 						</div>
-			 					</div>
-			 				</div>
-			 			</div>
+			 			<h3><strong>Name of Product</strong></h3>
+			 			<p class="text-uppercase">Location:</p>
+						<p class="text-uppercase">Price: </p>
+			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
 			 		</div>
 			 	</div>
 		 	</div>
 		 	<div id="content3" class="col-md-4">
-		 		<div class="thumbnail">
+				<div class="thumbnail">
 			 		<img src="images/img.jpg" alt="...">
 			 		<div class="caption">
-			 			<h3>Thumbnail label</h3>
-			 			<p>....</p>
-			 			<div id="view-more">
-			 				<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">
-			 				View More
-			 				</button>
-			 			</div>
-
-			 			<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-			 				<div class="modal-dialog modal-lg" role="document">
-			 					<div class="modal-content">
-			 						<div id="modal">
-			 							<div class="modal-header">
-				 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				 								<span aria-hidden="true">&times;</span>
-				 							</button>
-				 							<h3 class="modal-tittle" id="myModalLabel" align="center" style="font-family:Bodoni MT Black">
-				 								<p style="font-size:200%;">Farm Type</p>
-				 							</h3>
-				 						</div>
-			 						</div>
-			 						<div class="modal-body">
-			 							<img src="images/img.jpg" alt="...." style="width:100%; height:150px;">
-			 						</div>
-			 						<div class="modal-footer">
-			 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			 						</div>
-			 					</div>
-			 				</div>
-			 			</div>
+			 			<h3><strong>Name of Product</strong></h3>
+			 			<p class="text-uppercase">Location:</p>
+						<p class="text-uppercase">Price: </p>
+			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
 			 		</div>
 			 	</div>
 		 	</div>
