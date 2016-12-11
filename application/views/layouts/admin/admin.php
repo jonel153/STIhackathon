@@ -73,21 +73,29 @@
 		            <tr>
 		                <th>Farmers name</th>
 		                <th>Address</th>
+		                <th>Loan amount</th>
 		                <th>Action</th>
 		            </tr>
 		        </thead>
 		        <tbody>
-		        <tr>
-		        	<td>Jonel Belandres</td>
-		        	<td>Frisco Quezon, City</td>
-		        	<td></td>
-		        </tr>
+		        
 
-		        <tr>
-		        	<td>Ejay Reyes</td>
-		        	<td>Masambong Quezon, City</td>
-		        	<td></td>
-		        </tr>
+		        <?php
+		        		foreach ($get_loan as $row) {
+							$userid = $row->id;
+							$loan_id = $row->loan_id;
+							$address = $row->address;
+							$name = $row->last_name . ' ,' . $row->first_name;
+							$amount = $row->amount;
+							echo 	'<tr>
+										<td>' . $name . '</td>
+							        	<td>' . $address . '</td>
+							        	<td> &#8369; ' . number_format($amount) . '</td>
+							        	<td><a href="' . base_url() . 'admin/accept/' . $loan_id . '/' . $amount . '/' . $userid . '" class="btn btn-success btn-sm">Accept</a> <a href="' . base_url() . 'admin/decline/' . $loan_id . '" class="btn btn-danger btn-sm">Decline</a></td>
+						        	</tr>';
+						}
+		        	?>
+
 		        <?php
 		        	/*foreach ($rent->result() as $row) {
 						$transactionID = $row->transactionID;

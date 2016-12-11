@@ -26,5 +26,35 @@ class Admin_model extends CI_Model{
 			return false;
 		}
 	}
+
+	public function get_loan(){
+
+		$this->db->select('*');
+		$this->db->from('user_tbl, loan');
+		$this->db->where('loan.farmers_id=user_tbl.id AND loan.status="Pending"');
+		//$this->db->query("SELECT loan.*, user_tbl.* FROM loan, user_tbl WHERE loan.farmers_id=user_tbl.id");
+		$query = $this->db->get();
+		$result = $query->result();
+		
+		return $result;
+		
+	}
+
+	public function accept($id){
+				
+		$query = $this->db->query('UPDATE loan set status="Accept" WHERE loan_id="' . $id . '"');
+		return $query;
+	}
+
+	public function farmers_info($id){
+		$this->db->select('*');
+		$this->db->from('user_tbl');
+		$this->db->where('id='.$id);
+		//$this->db->query("SELECT loan.*, user_tbl.* FROM loan, user_tbl WHERE loan.farmers_id=user_tbl.id");
+		$query = $this->db->get();
+		$result = $query->result();
+		
+		return $result;
+	}
 }
 ?>

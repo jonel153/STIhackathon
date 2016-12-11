@@ -177,7 +177,7 @@
 							</a>
 						</li>
 
-						<li><a href="<?php echo base_url();?>main/login" >Sign in</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal1">Sign in</a></li>
 
 				<!-- Modal for Sign In -->
 			
@@ -192,85 +192,88 @@
 	</div>
 
 
-	<div id="slide" class="col-md-12">
+	<!-- <div id="slide" class="col-md-12">
+		<div id="sayings">"weaweaweaea"</div>
 
-	</div>
-
+	</div> -->
+	<br/><br/><br/>
 	<div class="col-md-3 col-md-offset-3">
-		<h2 align="center" class="text-uppercase" style="font-family: Imprint MT Shadow";>
-			<strong><u>List Of Goods</u></strong>
-		</h2>
 	</div>
 	<div id="middle_content" class ="col-md-12">
 		<div id="" class="col-md-9">
-		 	<div id="content1" class="col-md-4">
-		 		<div class="thumbnail">
-			 		<img src="images/img.jpg" alt="...">
-			 		<div class="caption">
-			 			<h3><strong>Name of Product</strong></h3>
-			 			<p class="text-uppercase">Location:</p>
-						<p class="text-uppercase">Price: </p>
-			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
-			 		</div>
-			 	</div>
-		 	</div>
-		 	<div id="content2" class="col-md-4">
-				<div class="thumbnail">
-			 		<img src="images/img.jpg" alt="...">
-			 		<div class="caption">
-			 			<h3><strong>Name of Product</strong></h3>
-			 			<p class="text-uppercase">Location:</p>
-						<p class="text-uppercase">Price: </p>
-			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
-			 		</div>
-			 	</div>
-		 	</div>
-		 	<div id="content3" class="col-md-4">
-				<div class="thumbnail">
-			 		<img src="images/img.jpg" alt="...">
-			 		<div class="caption">
-			 			<h3><strong>Name of Product</strong></h3>
-			 			<p class="text-uppercase">Location:</p>
-						<p class="text-uppercase">Price: </p>
-			 				<a href="<?php echo site_url('product');?>" type="button" class="btn btn-block btn-success">View</a>
-			 		</div>
-			 	</div>
-		 	</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p align="left">
+						<label>List of Goods</label>	
+					</p>
+				</div>
+				<div class="panel-body">
+				 	
+			 		<?php
+			 			foreach ($product as $row) {
+							$id = $row->id;
+							$type = $row->type;
+							$unit = $row->unit;
+							$price = $row->price;
+							$quantity = $row->quantity;
+							$total = $row->total;
+							$image= $row->images;		
+			 		?>
+			 			<div id="content2" class="col-md-4">
+							<div class="thumbnail">
+						 		<img width="300px" height="200px" src="<?php echo base_url(). $image;?>" alt="...">
+						 		<div class="caption">
+						 			Types:<?php echo $type;?><br>
+						 			Location:<br>
+						 			Price:<?php echo $price;?>
+									
+						 			<a href="<?php echo base_url() . 'main/product_details/'.$id;?>" type="button" class="btn btn-block btn-success">View</a>
+						 		</div>
+						 	</div>
+						</div>
+					<?php
+					}
+					?>
+				</div>
+			</div>		
 		</div>
 
-		<div id="announcement" class="col-md-3">
-			<!-- <div class="list-group-item success">
-				<h4 class="list-group-item-heading" align="center">
-					Announcements
-				</h4>
-			</div> -->
-			<div class="list-group">
-				<div id="announcement-header">
-					<a href="#" class="list-group-item active list-group-item-success" >
-						<h4 align="center" style="font-size:20px;">Announcements</h4>
-					</a>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p align="center" class="text-uppercase" style="font-family: Imprint MT Shadow";>
+						filter
+					</p>
 				</div>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
-				<a href="#" class="list-group-item">
-					The Quick Brown Fox Jump Over The Lazy Dog
-				</a>
+				<div class="panel-body">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="checkbox">
+								<input type="checkbox">Rice
+							</div>
+						</div>
+						<div>
+							<div class="checkbox">
+								<input type="checkbox">Tomato
+							</div>
+						</div>
+							<div class="checkbox">
+								<input type="checkbox">Banana
+							</div>
+						</div>
+					<form class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input class="form-control" placeholder="Search" type="text">
+				        </div>
+				     </form>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	$('#myModal').on('shown.bs.modal', function(){
+		$('#myInput').focus()
+	})
+</script>

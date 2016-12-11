@@ -61,8 +61,8 @@
 		<div id="login_header">Login</div>
 
 		<div id="login_input">
-			<form action="<?php echo base_url();?>admin/login_process" method="POST">
-				<label>Username:</label><input type="text" name="username" class="form-control">
+			<form action="<?php echo base_url();?>main/login_process" method="POST">
+				<label>Email:</label><input type="text" name="email" class="form-control">
 				<label>Password:</label><input type="password" name="password" class="form-control">
 				<input id="submit_btn" type="submit" name="submit" value="Login" class="form-control">
 			</form>
