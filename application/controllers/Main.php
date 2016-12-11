@@ -12,7 +12,7 @@ class Main extends CI_Controller{
 
 	}
 
-	public function index1(){
+	public function About(){
 		$this->load->view('layouts/about');
 
 	}
